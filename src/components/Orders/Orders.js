@@ -6,10 +6,12 @@ import Product from "../Product/Product";
 import Cart from "../Cart/Cart";
 import ReviewItem from "../ReviewItem/ReviewItem";
 import { removeFromDb } from "../../utilities/fakedb";
+import { useNavigate } from "react-router-dom";
 
 const Orders = () => {
     const [products, setProducts] = useProducts();
     const [cart, setCart] = useCart(products);
+    const navigate = useNavigate();
 
     const handleRemoveProduct = (product) => {
         const rest = cart.filter((p) => p.id !== product.id);
@@ -28,7 +30,15 @@ const Orders = () => {
                 ))}
             </div>
             <div className="cart-container">
-                <Cart cart={cart} setCart={setCart}></Cart>
+                <Cart cart={cart} setCart={setCart}>
+                    <button
+                        onClick={() => {
+                            navigate("/shipment");
+                        }}
+                    >
+                        Proceed shopping
+                    </button>
+                </Cart>
             </div>
         </div>
     );
