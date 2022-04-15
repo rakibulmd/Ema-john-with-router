@@ -1,0 +1,30 @@
+.review-item {
+    border: 1px solid #333;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    width: 570px;
+    align-items: center;
+}
+
+.review-item img {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+.review-item * {
+    margin: 0;
+}
+
+.review-item button {
+    font-size: 40px;
+    padding: 20px;
+    border: none;
+    background: rgb(255, 228, 228);
+    border-radius: 50%;
+    color: rgba(255, 0, 0, 0.75);
+}
